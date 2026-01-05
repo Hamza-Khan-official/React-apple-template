@@ -1,0 +1,48 @@
+.main_div_screen_4 {
+    /* border: 2px solid red; */
+    background-color: #f5f6f7;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.heading_Name p {
+    margin: 0;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.paragragh p {
+    font-size: 25px;
+}
+
+.screens_button_4 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.sub_1{
+    /* border: 2px solid green; */
+    background-color: #f5f6f7;
+}
+
+.sub_2{
+    /* border: 2px solid yellow; */
+    background-color: black;
+    color: white;
+}
+
+.image_4 {
+    width: 100%;
+    margin-top: 20px; /* text ke neeche gap */
+    display: flex;
+    justify-content: center;
+}
+
+.image_4 img {
+    width: 100%;
+    max-width: 1270px; /* Apple-style center banner */
+    height: auto;
+}
+

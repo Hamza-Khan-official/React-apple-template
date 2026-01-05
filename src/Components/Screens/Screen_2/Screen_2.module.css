@@ -1,0 +1,42 @@
+.main_div_screen_2 {
+    /* border: 2px solid red;    */
+    background-color: #efeff2ce;
+}
+
+.watch {
+    margin: 0;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.series {
+    font-size: 55px;
+    font-weight: lighter;
+}
+
+.paragragh {
+    /* font-weight: bolder; */
+    font-size: 25px;
+}
+
+.screens_button_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.image_2 {
+    width: 100%;
+    margin-top: 20px;
+    /* text ke neeche gap */
+    display: flex;
+    justify-content: center;
+}
+
+.image_2 img {
+    width: 100%;
+    max-width: 1270px;
+    /* Apple-style center banner */
+    height: auto;
+}

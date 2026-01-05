@@ -1,38 +1,35 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import styles from './Screen_1.module.css';
+import Button from 'react-bootstrap/Button';
+import image from '/public/screen_1_image_1.png'
+
+
 
 const Screen_1 = () => {
     return (
-        <div>
+        <div  className={styles.main_div_screen_1}>
+            <br /><br />
 
-            <div>
-                <Row>
-                    <Col xs={12}>iPhone</Col>
-                </Row>
-            </div>
-            <Row>
-                <Col xs={12}><p>Say hello to the latest generation of iPhone</p></Col>
-            </Row>
-            <Row>
-                <Col><button>Learn More</button></Col>
-                <Col> <button>Shop iPhone</button></Col>
-            </Row>
+            <center>
+                <div className={styles.iphone}>
+                    <p>iPhone</p>
+                </div>
+                <div className={styles.paragragh}>
+                    <p>Say hello to the latest generation of iPhone</p>
+                </div>
+                <div className={styles.screens_button_1}>
+                    <Button variant="primary">Learn More</Button>
+                    <Button variant="primary">Shop iPhone</Button>
+                </div>
+                <div className={styles.image_1}>
+                    <img src={image} alt="" />
+                </div>
 
+            </center>
 
-            {/* <div>iPhone</div>
-      <div>
-        <p>Say hello to the latest generation of iPhone</p>
-      </div>
-      <div>
-        <button>Learn More</button>
-        <button>Shop iPhone</button>
-      </div>
-      <div>
-
-      </div> */}
+      <br /><br />
         </div>
+      
     )
 }
 

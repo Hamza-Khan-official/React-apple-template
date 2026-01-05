@@ -1,0 +1,48 @@
+.main_div_screen_5 {
+    /* border: 2px solid red; */
+    background-color: #f5f6f7;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.heading_Name p {
+    margin: 0;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.paragragh p {
+    font-size: 25px;
+}
+
+.screens_button_5 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.sub_1{
+    /* border: 2px solid green; */
+    background-color: black;
+    color: white;
+}
+
+.sub_2{
+    background-color: #f5f6f7;
+    /* border: 2px solid yellow; */
+}
+
+.image_5 {
+    width: 100%;
+    margin-top: 20px; /* text ke neeche gap */
+    display: flex;
+    justify-content: center;
+}
+
+.image_5 img {
+    width: 100%;
+    max-width: 1270px; /* Apple-style center banner */
+    height: auto;
+}
+

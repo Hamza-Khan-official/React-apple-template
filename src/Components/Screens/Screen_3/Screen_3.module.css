@@ -1,0 +1,31 @@
+.main_div_screen_3{
+    /* border: 2px solid red; */
+    background-color: #f5f6f7;
+}
+
+.paragragh{
+    /* font-weight: bolder; */
+    font-size: 25px;
+}
+.but_par{
+    background-color: #b6e0f0;
+}
+.screens_button_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.image_3 {
+    width: 100%;
+    margin-top: 20px; /* text ke neeche gap */
+    display: flex;
+    justify-content: center;
+}
+
+.image_3 img {
+    width: 100%;
+    max-width: 1270px; /* Apple-style center banner */
+    height: auto;
+}

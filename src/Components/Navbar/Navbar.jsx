@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const Navbar_ = () => {
     return (
-        <div>
+        <div style={{backgroundColor:'#ffffff'}}>
             <Navbar bg="light" data-bs-theme="light">
                 <Container>
                     <Navbar.Brand href="#home"><img height={30} src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="" /></Navbar.Brand>
