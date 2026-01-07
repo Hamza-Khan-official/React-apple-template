@@ -12,21 +12,25 @@ import Screen_5 from './Components/Screens/Screen_5/Screen_5';
 import Screen_6 from './Components/Screens/Screen_6/Screen_6';
 import Screen_7 from './Components/Screens/Screen_7/Screen_7';
 import Screen_8 from './Components/Screens/Screen_8/Screen_8';
+import Screen_9 from './Components/Screens/Screen_9/Screen_9';
+import Screen_10 from './Components/Screens/Screen_10/Screen_10';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <Navbar />
-     <Screen_1 />
-     <Screen_2 />
-     <Screen_3 />
-     <Screen_4 />
-     <Screen_5 />
-     <Screen_6 />
-     <Screen_7 />
-     <Screen_8 />
+      <Navbar />
+      <Screen_1 />
+      <Screen_2 />
+      <Screen_3 />
+      <Screen_4 />
+      <Screen_5 />
+      <Screen_6 />
+      <Screen_7 />
+      <Screen_8 />
+      <Screen_9 />
+      <Screen_10 />
     </>
   )
 }

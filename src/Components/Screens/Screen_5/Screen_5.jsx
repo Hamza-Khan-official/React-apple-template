@@ -3,8 +3,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import styles from './Screen_5.module.css'
-import image_1 from '/public/screen_5_image_5.png'
-import image_2 from '/public/screen_5_image_5.1.png'
+import image_1 from '/public/screen_6_image_6.png'
+import image_2 from '/public/screen_6_image_6.1.png'
 
 const Screen_5 = () => {
     return (

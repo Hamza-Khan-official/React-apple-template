@@ -39,6 +39,9 @@ const AppleCarousel = () => {
         { banner: b9, thumb: t9 }
     ];
 
+    const getPrevIndex = () => (currentIndex - 1 + slides.length) % slides.length;
+    const getNextIndex = () => (currentIndex + 1) % slides.length;
+
     /* ================= AUTO PLAY ================= */
     useEffect(() => {
         if (!isPlaying) return;
@@ -70,9 +73,18 @@ const AppleCarousel = () => {
         <div style={styles.wrapper}>
             <div style={styles.container}>
 
-                {/* ================= BANNER ================= */}
-                <center>
+                {/* ================= BANNER WITH PEEK ================= */}
+                <div style={styles.bannerSection}>
+                    {/* Previous Half Image */}
+                    <div style={styles.peekLeft}>
+                        <img 
+                            src={slides[getPrevIndex()].banner} 
+                            alt="" 
+                            style={styles.peekImage}
+                        />
+                    </div>
 
+                    {/* Main Banner */}
                     <div style={styles.bannerWrapper}>
                         <div
                             style={{
@@ -87,7 +99,16 @@ const AppleCarousel = () => {
                             ))}
                         </div>
                     </div>
-                </center>
+
+                    {/* Next Half Image */}
+                    <div style={styles.peekRight}>
+                        <img 
+                            src={slides[getNextIndex()].banner} 
+                            alt="" 
+                            style={styles.peekImage}
+                        />
+                    </div>
+                </div>
 
                 {/* ================= THUMBNAILS ================= */}
                 <div ref={thumbsContainerRef} style={styles.thumbContainer}>
@@ -102,7 +123,7 @@ const AppleCarousel = () => {
                                     : styles.thumbInactive)
                             }}
                         >
-                            <img src={slide.thumb} style={styles.thumbImage} />
+                            <img src={slide.thumb} alt="" style={styles.thumbImage} />
                         </button>
                     ))}
                 </div>
@@ -144,7 +165,6 @@ const AppleCarousel = () => {
     );
 };
 
-
 const styles = {
     wrapper: {
         width: '100%',
@@ -157,35 +177,58 @@ const styles = {
         margin: '0 auto',
         padding: '0 20px'
     },
+    bannerSection: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '16px',
+        marginBottom: '24px',
+        width: '100%'
+    },
+    peekLeft: {
+        width: '15%',
+        height: '400px',
+        overflow: 'hidden',
+        borderRadius: '12px',
+        opacity: 0.5
+    },
+    peekRight: {
+        width: '15%',
+        height: '400px',
+        overflow: 'hidden',
+        borderRadius: '12px',
+        opacity: 0.5
+    },
+    peekImage: {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        objectPosition: 'center',
+        imageRendering: 'crisp-edges'
+    },
     bannerWrapper: {
-        width: '80%',
-        height: '75%',
+        flex: 1,
+        height: '500px',
         overflow: 'hidden',
         borderRadius: '18px',
-        marginBottom: '24px',
         position: 'relative',
         backgroundColor: '#000',
         boxShadow: '0 4px 20px rgba(0,0,0,0.15)'
     },
     bannerSlider: {
         display: 'flex',
+        height: '100%',
         transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
     },
     bannerSlide: {
         minWidth: '100%',
-        position: 'relative',
-        aspectRatio: '16/9'
+        height: '100%',
+        position: 'relative'
     },
     bannerImage: {
         width: '100%',
-        // height: '80%',
+        height: '100%',
         objectFit: 'cover',
         display: 'block'
-    },
-    thumbOuterContainer: {
-        width: '100%',
-        marginBottom: '24px',
-        position: 'relative'
     },
     thumbContainer: {
         display: 'flex',
@@ -195,7 +238,8 @@ const styles = {
         scrollbarWidth: 'none',
         msOverflowStyle: 'none',
         padding: '4px 0',
-        WebkitOverflowScrolling: 'touch'
+        WebkitOverflowScrolling: 'touch',
+        marginBottom: '24px'
     },
     thumb: {
         flexShrink: 0,
@@ -250,16 +294,30 @@ const styles = {
     dotInactive: {
         width: '8px',
         backgroundColor: '#d2d2d7'
+    },
+    playPause: {
+        marginLeft: '12px',
+        padding: '8px 12px',
+        backgroundColor: '#0071e3',
+        color: 'white',
+        border: 'none',
+        borderRadius: '6px',
+        cursor: 'pointer',
+        fontSize: '12px',
+        fontWeight: '500'
     }
 };
 
 // CSS to hide scrollbar
-const styleSheet = document.createElement("style");
-styleSheet.innerText = `
+const styleElement = document.createElement("style");
+styleElement.textContent = `
   div::-webkit-scrollbar {
     display: none;
   }
 `;
-document.head.appendChild(styleSheet);
+if (!document.head.querySelector('style[data-carousel-styles]')) {
+    styleElement.setAttribute('data-carousel-styles', 'true');
+    document.head.appendChild(styleElement);
+}
 
 export default AppleCarousel;
