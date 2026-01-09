@@ -1,0 +1,137 @@
+/* ===== Base Styles ===== */
+.id {
+    display: flex;
+    justify-content: center;
+    background-color: #1d1d1f;
+    color: #c6c6c6;
+    font-size: 11px;
+    text-align: start;
+}
+
+.para {
+    width: 80%;
+    height: 100%;
+}
+
+/* ===== Footer Styles ===== */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* ensures wrapping on smaller screens */
+    padding: 40px;
+    background-color: #1d1d1f;
+    color: #c6c6c6;
+    gap: 20px; /* space between columns */
+}
+
+.footer div {
+    flex: 1 1 180px; /* grow, shrink, base width */
+    min-width: 150px; /* ensures columns don't get too small */
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #c6c6c6; /* light gray text */
+}
+
+.footer_para_specifc_keywords {
+    color: #2997ff; /* blue links */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.lastfooter {
+    text-align: center;
+    padding: 20px;
+    background-color: #1d1d1f;
+    color: #c6c6c6;
+    font-size: 12px;
+}
+
+.lastfooter_para {
+    margin-left: 140px;
+}
+
+.footer_last_word {
+    margin-left: 140px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 30px;
+    }
+
+    .footer div {
+        flex: 1 1 200px;
+        margin-bottom: 20px;
+    }
+
+    .footer p {
+        font-size: 13px;
+    }
+
+    .lastfooter {
+        font-size: 11px;
+        padding: 15px;
+    }
+}
+
+/* Small Tablets / Large Phones (600px - 768px) */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .footer div {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+
+    .footer p {
+        font-size: 13px;
+    }
+
+    .lastfooter {
+        font-size: 11px;
+        padding: 10px;
+    }
+}
+
+/* Mobile Phones (up to 600px) */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .footer div {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .footer p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .lastfooter {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .footer_para_specifc_keywords {
+        display: block; /* each keyword on new line */
+        margin-top: 3px;
+    }
+}

@@ -2,31 +2,47 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import './Navbar.module.css'
+import style from './Navbar.module.css'
 
 const Navbar_ = () => {
     return (
-        <div style={{backgroundColor:'#ffffff'}}>
-            <Navbar bg="light" data-bs-theme="light">
-                <Container>
-                    <Navbar.Brand href="#home"><img height={30} src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="" /></Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">Store</Nav.Link>
-                        <Nav.Link href="#features">Mac</Nav.Link>
-                        <Nav.Link href="#pricing">iPad</Nav.Link>
-                        <Nav.Link href="#pricing">iPhone</Nav.Link>
-                        <Nav.Link href="#pricing">Watch</Nav.Link>
-                        <Nav.Link href="#pricing">Vision</Nav.Link>
-                        <Nav.Link href="#pricing">AirPods</Nav.Link>
-                        <Nav.Link href="#pricing">TV & Home</Nav.Link>
-                        <Nav.Link href="#pricing">Entertainment</Nav.Link>
-                        <Nav.Link href="#pricing">Accessories</Nav.Link>
-                        <Nav.Link href="#pricing">Support</Nav.Link>
-                        <Nav.Link href="#pricing">Login</Nav.Link>
-                        <Nav.Link href="#pricing">SignUP</Nav.Link>
-                    </Nav>
-                </Container>
-            </Navbar>
-        </div>
+        <>
+            <div className={style.main}>
+                <Navbar bg="light" expand="lg" className="apple-navbar">
+                    <Container fluid>
+                        <Navbar.Brand href="#home">
+                            <img
+                                height={30}
+                                src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                                alt="Apple"
+                                className="apple-logo"
+                            />
+                        </Navbar.Brand>
+
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="ms-auto">
+                                <Nav.Link href="#store">Store</Nav.Link>
+                                <Nav.Link href="#mac">Mac</Nav.Link>
+                                <Nav.Link href="#ipad">iPad</Nav.Link>
+                                <Nav.Link href="#iphone">iPhone</Nav.Link>
+                                <Nav.Link href="#watch">Watch</Nav.Link>
+                                <Nav.Link href="#vision">Vision</Nav.Link>
+                                <Nav.Link href="#airpods">AirPods</Nav.Link>
+                                <Nav.Link href="#tv">TV & Home</Nav.Link>
+                                <Nav.Link href="#entertainment">Entertainment</Nav.Link>
+                                <Nav.Link href="#accessories">Accessories</Nav.Link>
+                                <Nav.Link href="#support">Support</Nav.Link>
+                                <Nav.Link href="#login" className="auth-link">Login</Nav.Link>
+                                <Nav.Link href="#signup" className="auth-link">SignUp</Nav.Link>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+            </div>
+        </>
     )
 }
 

@@ -25,11 +25,10 @@ const Screen_3 = () => {
                             <img src={image_2} alt="" />
                         </div>
                     </div>
-
+                <br />
 
                 </center>
 
-                <br /><br />
             </div>
         </div>
     )

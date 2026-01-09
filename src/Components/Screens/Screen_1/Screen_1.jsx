@@ -27,7 +27,6 @@ const Screen_1 = () => {
 
             </center>
 
-      <br /><br />
         </div>
       
     )
