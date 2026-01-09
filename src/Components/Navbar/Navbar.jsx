@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './Navbar.module.css'
 import style from './Navbar.module.css'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar_ = () => {
     return (
@@ -35,7 +36,11 @@ const Navbar_ = () => {
                                 <Nav.Link href="#entertainment">Entertainment</Nav.Link>
                                 <Nav.Link href="#accessories">Accessories</Nav.Link>
                                 <Nav.Link href="#support">Support</Nav.Link>
-                                <Nav.Link href="#login" className="auth-link">Login</Nav.Link>
+                                <Nav.Link href="#login" className="auth-link">
+                                    <Link to={'/React-apple-template/Login'}>
+                                    <span className={style.login}>Login</span>
+                                    </Link>
+                                </Nav.Link>
                                 <Nav.Link href="#signup" className="auth-link">SignUp</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>

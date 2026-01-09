@@ -3,7 +3,10 @@
     justify-content: center;
     
 }
-
+.login{
+  color: black;
+  text-transform: none !important;
+}
 
 .apple-navbar {
     background-color: rgba(255, 255, 255, 0.8) !important;
