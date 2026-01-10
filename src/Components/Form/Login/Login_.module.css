@@ -1,0 +1,84 @@
+.main {
+  background-color: #212121;
+  min-height: 100vh;
+}
+
+.card {
+  width: 450px;
+  margin: auto;
+  height: 500px;
+  border-radius: 30px;
+  background: #1c1c1e;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+              -15px -15px 30px rgb(60, 60, 60);
+}
+
+.heading {
+  font-size: 23px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Exact Style Input */
+.customInput {
+  width: 300px;
+  padding: 12px 15px;
+  background: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 10px;
+  color: #ddd;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.customInput::placeholder {
+  color: #8a8a8a;
+}
+
+.customInput:focus {
+  border: 1px solid #2d8cff;
+  box-shadow: 0 0 0 1px #2d8cff;
+  background: #1f1f1f;
+  color: white;
+}
+
+.paragragh{
+    color: #2d8cff;
+    font-size: 12px;
+    margin-inline-start: 15%;
+}
+.pararagh_last_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pararagh_last{
+    font-size: 10px;
+    color: white;
+}
+
+.pararagh_last_color{
+    color: #2d8cff;
+}
+.buttons_div{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.buttons_div_p_1{
+    font-size: 10px;
+    border-radius: 10px;
+    padding: 8px;
+    padding-left: 53px;
+    padding-right: 53px;
+    background-color: #4381cc;
+    color: white;
+}
+.buttons_div_p_2{
+    font-size: 10px;
+    border-radius: 10px;
+    padding: 8px;
+    padding-left: 33px;
+    padding-right: 33px;
+}

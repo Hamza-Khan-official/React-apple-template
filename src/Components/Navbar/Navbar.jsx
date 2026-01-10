@@ -37,7 +37,7 @@ const Navbar_ = () => {
                                 <Nav.Link href="#accessories">Accessories</Nav.Link>
                                 <Nav.Link href="#support">Support</Nav.Link>
                                 <Nav.Link href="#login" className="auth-link">
-                                    <Link to={'/React-apple-template/Login'}>
+                                    <Link to={'/React-apple-template/login'}>
                                     <span className={style.login}>Login</span>
                                     </Link>
                                 </Nav.Link>
