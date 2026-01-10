@@ -69,7 +69,7 @@ const Sign_UP_ = () => {
 
           {/* Sign In Link */}
           <p className={styles.signinText}>
-            Already have an account? <Link to="/signin" className={styles.signinLink}>Sign in</Link>
+            Already have an account? <Link to="/React-apple-template/login" className={styles.signinLink}>Sign in</Link>
           </p>
         </div>
 

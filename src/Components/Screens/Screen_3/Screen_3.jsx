@@ -19,13 +19,13 @@ const Screen_3 = () => {
                         </div>
                         <div className={styles.screens_button_3}>
                             <Button variant="primary">Learn More</Button>
-                            <Button variant="primary">Shop iPhone</Button>
+                            <Button variant="outline-primary">Buy</Button>
                         </div>
                         <div className={styles.image_3}>
                             <img src={image_2} alt="" />
                         </div>
                     </div>
-                <br />
+                    <br />
 
                 </center>
 

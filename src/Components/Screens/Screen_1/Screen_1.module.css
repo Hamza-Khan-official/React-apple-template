@@ -12,13 +12,20 @@
     /* font-weight: bolder; */
     font-size: 25px;
 }
+/* Buttons */
 .screens_button_1 {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
+.screens_button_1 button {
+    padding: 8px 22px;
+    font-size: 16px;
+    border-radius: 20px;
+    min-width: 110px;
+}
 .image_1 {
     width: 100%;
     margin-top: 20px; /* text ke neeche gap */

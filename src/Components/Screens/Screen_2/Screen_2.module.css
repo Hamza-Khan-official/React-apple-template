@@ -1,6 +1,6 @@
 .main_div_screen_2 {
-    /* border: 2px solid red;    */
     background-color: #efeff2ce;
+    padding: 40px 20px;
 }
 
 .watch {
@@ -15,28 +15,143 @@
 }
 
 .paragragh {
-    /* font-weight: bolder; */
     font-size: 25px;
 }
 
+/* Buttons */
 .screens_button_2 {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
 }
 
+.screens_button_2 button {
+    padding: 8px 22px;
+    font-size: 16px;
+    border-radius: 20px;
+    min-width: 110px;
+}
+
+/* Image Container - Full Width Banner Style */
 .image_2 {
-    width: 100%;
-    margin-top: 20px;
-    /* text ke neeche gap */
+    width: 100vw;
+    margin-top: 30px;
+    margin-left: calc(-50vw + 50%);
     display: flex;
     justify-content: center;
+    padding: 0;
 }
 
 .image_2 img {
     width: 100%;
-    max-width: 1270px;
-    /* Apple-style center banner */
     height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .watch,
+    .series {
+        font-size: 45px;
+    }
+
+    .paragragh {
+        font-size: 22px;
+    }
+
+    .image_2 img {
+        max-width: 100%;
+    }
+}
+
+/* Mobile Landscape & Small Tablet (600px - 767px) */
+@media (max-width: 767px) {
+    .main_div_screen_2 {
+        padding: 30px 15px;
+    }
+
+    .watch,
+    .series {
+        font-size: 38px;
+    }
+
+    .paragragh {
+        font-size: 20px;
+    }
+
+    .screens_button_2 {
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .screens_button_2 button {
+        padding: 7px 18px;
+        font-size: 15px;
+        min-width: 100px;
+    }
+
+    .image_2 {
+        padding: 0;
+        margin-top: 25px;
+        margin-left: calc(-50vw + 50%);
+    }
+}
+
+/* Mobile Portrait (below 600px) */
+@media (max-width: 599px) {
+    .main_div_screen_2 {
+        padding: 25px 10px;
+    }
+
+    .watch,
+    .series {
+        font-size: 32px;
+    }
+
+    .paragragh {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+
+    .paragragh p {
+        margin: 8px 0;
+    }
+
+    .screens_button_2 {
+        gap: 12px;
+        margin: 15px 0;
+    }
+
+    .screens_button_2 button {
+        padding: 7px 16px;
+        font-size: 14px;
+        min-width: 95px;
+    }
+
+    .image_2 {
+        padding: 0;
+        margin-top: 20px;
+        margin-left: calc(-50vw + 50%);
+    }
+}
+
+/* Small Mobile (below 400px) */
+@media (max-width: 399px) {
+    .watch,
+    .series {
+        font-size: 28px;
+    }
+
+    .paragragh {
+        font-size: 16px;
+    }
+
+    .screens_button_2 button {
+        padding: 6px 14px;
+        font-size: 13px;
+        min-width: 90px;
+    }
 }

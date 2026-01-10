@@ -4,7 +4,7 @@
     justify-content: center;
     background-color: #1d1d1f;
     color: #c6c6c6;
-    font-size: 11px;
+    font-size: 12px;
     text-align: start;
 }
 
@@ -18,10 +18,11 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; /* ensures wrapping on smaller screens */
-    padding: 40px;
+    padding: 70px;
+    font-size: 10px;
     background-color: #1d1d1f;
     color: #c6c6c6;
-    gap: 20px; /* space between columns */
+    gap: 10px;
 }
 
 .footer div {
@@ -31,8 +32,8 @@
 
 .footer p {
     font-size: 14px;
-    line-height: 1.6;
-    color: #c6c6c6; /* light gray text */
+    /* line-height: 1.6; */
+    color: #ffffff; /* light gray text */
 }
 
 .footer_para_specifc_keywords {
@@ -50,11 +51,11 @@
 }
 
 .lastfooter_para {
-    margin-left: 140px;
+    /* margin-left: 140px; */
 }
 
 .footer_last_word {
-    margin-left: 140px;
+    /* margin-left: 140px; */
     font-size: 12px;
     line-height: 1.5;
 }
@@ -98,7 +99,7 @@
     }
 
     .footer p {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .lastfooter {

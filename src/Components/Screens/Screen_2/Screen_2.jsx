@@ -19,7 +19,7 @@ const Screen_2 = () => {
                 </div>
                 <div className={styles.screens_button_2}>
                     <Button variant="primary">Learn More</Button>
-                    <Button variant="primary">Buy</Button>
+                    <Button variant="outline-primary">Buy Watch</Button>
                 </div>
                 <div className={styles.image_2}>
                     <img src={image} alt="" />

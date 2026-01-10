@@ -31,7 +31,6 @@ const screen_11 = () => {
                     Features are subject to change. Some features, applications, and services may not be available in all regions or all languages.
                     <br /><br />
                     <hr />
-                    <br /><br /><br /><br />
                 </p>
             </div>
 

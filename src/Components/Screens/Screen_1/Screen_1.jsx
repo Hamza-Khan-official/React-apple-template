@@ -7,7 +7,7 @@ import image from '/public/screen_1_image_1.png'
 
 const Screen_1 = () => {
     return (
-        <div  className={styles.main_div_screen_1}>
+        <div className={styles.main_div_screen_1}>
             <br /><br />
 
             <center>
@@ -18,8 +18,10 @@ const Screen_1 = () => {
                     <p>Say hello to the latest generation of iPhone</p>
                 </div>
                 <div className={styles.screens_button_1}>
-                    <Button variant="primary">Learn More</Button>
-                    <Button variant="primary">Shop iPhone</Button>
+                    <div className={styles.screens_button_1}>
+                        <Button variant="primary">Learn More</Button>
+                        <Button variant="outline-primary">Shop iPhone</Button>
+                    </div>
                 </div>
                 <div className={styles.image_1}>
                     <img src={image} alt="" />
@@ -28,7 +30,7 @@ const Screen_1 = () => {
             </center>
 
         </div>
-      
+
     )
 }
 

@@ -1,23 +1,43 @@
-.main{
-    display: flex;
-    justify-content: center;
-    
+.main {
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f7;
+  width: 100%;
 }
-.login{
-  color: black;
+
+.login {
+  color: #1d1d1f;
+  text-decoration: none !important;
   text-transform: none !important;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.login:hover {
+  color: #0071e3;
+  text-decoration: none !important;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 .apple-navbar {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(10px);
+  background-color: #f5f5f7 !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 12px 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .apple-logo {
   height: 30px;
-  transition: height 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.apple-logo:hover {
+  opacity: 0.7;
 }
 
 .apple-navbar .nav-link {
@@ -40,8 +60,8 @@
 @media (min-width: 1200px) {
   .apple-navbar .nav-link {
     font-size: 14px;
-    padding: 8px 10px;
-    margin: 0 2px;
+    padding: 8px 12px;
+    margin: 0 3px;
   }
 }
 
@@ -49,8 +69,8 @@
 @media (min-width: 992px) and (max-width: 1199px) {
   .apple-navbar .nav-link {
     font-size: 13px;
-    padding: 8px 8px;
-    margin: 0 1px;
+    padding: 8px 10px;
+    margin: 0 2px;
   }
 }
 
@@ -62,13 +82,16 @@
 
   .apple-navbar .navbar-collapse {
     margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px 15px;
+    border-radius: 8px;
   }
 
   .apple-navbar .nav-link {
     padding: 12px 0;
     font-size: 16px;
     text-align: left;
-    border-bottom: 1px solid #f5f5f7;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
 
   .apple-navbar .nav-link:last-child {
@@ -82,7 +105,7 @@
   .auth-link {
     margin-top: 10px;
     padding-top: 15px !important;
-    border-top: 2px solid #e5e5e7;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -120,5 +143,10 @@
   .apple-navbar .navbar-toggler {
     padding: 6px 10px;
     font-size: 1.1rem;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .apple-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 113, 227, 0.25);
   }
 }
