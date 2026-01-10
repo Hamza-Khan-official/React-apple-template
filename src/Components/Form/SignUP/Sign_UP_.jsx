@@ -52,19 +52,21 @@ const Sign_UP_ = () => {
           <div className={styles.privacyNotice}>
             <div className={styles.privacyIcon}>
               <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L4 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-8-4zm0 18c-3.86-.94-7-5.15-7-10V7.3l7-3.11 7 3.11V10c0 4.85-3.14 9.06-7 10z"/>
-                <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                <path d="M12 2L4 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-8-4zm0 18c-3.86-.94-7-5.15-7-10V7.3l7-3.11 7 3.11V10c0 4.85-3.14 9.06-7 10z" />
+                <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
               </svg>
             </div>
             <p className={styles.privacyText}>
-              Your Apple Account information is used to allow you to sign in securely and access your data. 
+              Your Apple Account information is used to allow you to sign in securely and access your data.
               Apple records certain data for security, support, and reporting purposes.
               <a href="#" className={styles.privacyLink}> See how your data is managed...</a>
             </p>
           </div>
 
           {/* Buttons */}
-          <button className={styles.continueBtn}>Continue</button>
+          <Link to='/React-apple-template/login'>
+            <button className={styles.continueBtn}>Continue</button>
+          </Link>
           <button className={styles.iphoneBtn}>Sign up With iPhone</button>
 
           {/* Sign In Link */}
@@ -78,7 +80,7 @@ const Sign_UP_ = () => {
           ← Back to Home
         </Link>
       </div>
-    </div>
+    </div >
   );
 };
 

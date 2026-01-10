@@ -1,1 +1,175 @@
-/* 
+/* Main Wrapper */
+.carouselWrapper {
+    width: 100%;
+    background-color: hsl(240, 11%, 96%);
+    overflow-x: visible;
+
+    /* padding: 40px 0; */
+}
+
+.carouselContainer {
+    width: 100%;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
+    /* padding: 0 20px; */
+}
+
+/* Banner Section with Peek Effect */
+.bannerSection {
+    display: flex;
+    height: 450px;
+    /* align-items: center; */
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 98.5vw;
+}
+
+/* Peek Images (Left & Right) */
+.peekLeft,
+.peekRight {
+    width: 20%;
+    height: 450px;
+    /* overflow: hidden; */
+    /* border-radius: 12px; */
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.peekLeft:hover,
+.peekRight:hover {
+    opacity: 0.7;
+}
+
+.peekLeft img,
+.peekRight img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Main Carousel */
+.carouselMain {
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Bootstrap Carousel Custom Styles */
+.carouselMain :global(.carousel),
+.carouselMain :global(.carousel-inner),
+.carouselMain :global(.carousel-item) {
+    height: 100%;
+}
+
+.carouselMain :global(.carousel-item) img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Thumbnail Container */
+.thumbnailContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin-bottom: 24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+
+    width: 99vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+
+.thumbnailContainer::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual Thumbnails */
+.thumbnail {
+    flex-shrink: 0;
+    width: 250px;
+    height: 170px;
+    /* border-radius: 12px; */
+    /* overflow: hidden; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+    background: none;
+    opacity: 0.9;
+    transform: scale(0.95);
+}
+
+.thumbnail.active {
+    opacity: 0.9;
+    transform: scale(1);
+    box-shadow: 0 0 0 3px #0071e3;
+}
+
+.thumbnail:hover {
+    opacity: 0.9;
+    transform: scale(0.98);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+/* Dot Navigation */
+.dotsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+    background-color: #d2d2d7;
+}
+
+.dot.active {
+    width: 32px;
+    background-color: #0071e3;
+}
+
+.dot:hover {
+    background-color: #0071e3;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .peekLeft,
+    .peekRight {
+        width: 10%;
+        height: 250px;
+    }
+
+    .carouselMain {
+        height: 300px;
+    }
+
+    .thumbnail {
+        width: 180px;
+        height: 100px;
+    }
+}

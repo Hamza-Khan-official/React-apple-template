@@ -41,13 +41,18 @@ const Login_ = () => {
             <button className={style.buttons_div_p_1} type="button" >Continue</button>
             <button className={style.buttons_div_p_2} type="button">Sign in With iPhone</button>
           </div>
-
         </center>
+
+        <div>
+          <Link to="/React-apple-template/" className={style.homeLink}>
+            ← Back to Home
+          </Link>
+        </div>
 
       </div>
 
       <br /><br />
-      <Link to={'/React-apple-template/'}>Home</Link>
+      {/* <Link to={'/React-apple-template/'}>Home</Link> */}
     </div>
   )
 }

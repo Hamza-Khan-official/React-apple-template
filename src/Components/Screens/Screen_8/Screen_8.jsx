@@ -1,6 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
+import { Carousel } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './Screen_8.module.css';
 
-// Import banner images
+// Import your banner images
 import b1 from "../../../../public/carosel_1_images/carosel_1_image_1.jpg";
 import b2 from "../../../../public/carosel_1_images/carosel_1_image_2.jpg";
 import b3 from "../../../../public/carosel_1_images/carosel_1_image_3.jpg";
@@ -11,7 +14,7 @@ import b7 from "../../../../public/carosel_1_images/carosel_1_image_7.jpg";
 import b8 from "../../../../public/carosel_1_images/carosel_1_image_8.jpg";
 import b9 from "../../../../public/carosel_1_images/carosel_1_image_9.jpg";
 
-// Import thumbnail images
+// Import your thumbnail images
 import t1 from "../../../../public/carosel_2_images/carosel_2_image_1.jpg";
 import t2 from "../../../../public/carosel_2_images/carosel_2_image_2.jpg";
 import t3 from "../../../../public/carosel_2_images/carosel_2_image_3.jpg";
@@ -23,10 +26,9 @@ import t8 from "../../../../public/carosel_2_images/carosel_2_image_8.jpg";
 import t9 from "../../../../public/carosel_2_images/carosel_2_image_9.jpg";
 
 const AppleCarousel = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(true);
-    const thumbsContainerRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
 
+    // Slides data with your images
     const slides = [
         { banner: b1, thumb: t1 },
         { banner: b2, thumb: t2 },
@@ -39,285 +41,89 @@ const AppleCarousel = () => {
         { banner: b9, thumb: t9 }
     ];
 
-    const getPrevIndex = () => (currentIndex - 1 + slides.length) % slides.length;
-    const getNextIndex = () => (currentIndex + 1) % slides.length;
+    // Get previous and next index for peek effect
+    const getPrevIndex = () => (activeIndex - 1 + slides.length) % slides.length;
+    const getNextIndex = () => (activeIndex + 1) % slides.length;
 
-    /* ================= AUTO PLAY ================= */
-    useEffect(() => {
-        if (!isPlaying) return;
-
-        const timer = setInterval(() => {
-            setCurrentIndex(prev => (prev + 1) % slides.length);
-        }, 3000);
-
-        return () => clearInterval(timer);
-    }, [isPlaying, slides.length]);
-
-    /* ================= DOT SCROLL CENTER ================= */
-    useEffect(() => {
-        const container = thumbsContainerRef.current;
-        if (!container) return;
-
-        const active = container.children[currentIndex];
-        if (!active) return;
-
-        const left =
-            active.offsetLeft -
-            container.offsetWidth / 2 +
-            active.offsetWidth / 2;
-
-        container.scrollTo({ left, behavior: "smooth" });
-    }, [currentIndex]);
+    // Handle slide change
+    const handleSelect = (selectedIndex) => {
+        setActiveIndex(selectedIndex);
+    };
 
     return (
-        <div style={styles.wrapper}>
-            <div style={styles.container}>
-
-                {/* ================= BANNER WITH PEEK ================= */}
-                <div style={styles.bannerSection}>
-                    {/* Previous Half Image */}
-                    <div style={styles.peekLeft}>
+        <div className={styles.carouselWrapper}>
+            <div className={styles.carouselContainer}>
+                
+                {/* Banner Section with Peek Effect */}
+                <div className={styles.bannerSection}>
+                    
+                    {/* Left Peek Image */}
+                    <div className={styles.peekLeft}>
                         <img 
                             src={slides[getPrevIndex()].banner} 
-                            alt="" 
-                            style={styles.peekImage}
+                            alt="Previous slide"
                         />
                     </div>
 
-                    {/* Main Banner */}
-                    <div style={styles.bannerWrapper}>
-                        <div
-                            style={{
-                                ...styles.bannerSlider,
-                                transform: `translateX(-${currentIndex * 100}%)`
-                            }}
+                    {/* Main Bootstrap Carousel */}
+                    <div className={styles.carouselMain}>
+                        <Carousel 
+                            activeIndex={activeIndex} 
+                            onSelect={handleSelect}
+                            interval={3000}
+                            indicators={false}
+                            controls={false}
+                            fade={false}
                         >
-                            {slides.map((slide, i) => (
-                                <div key={i} style={styles.bannerSlide}>
-                                    <img src={slide.banner} alt="" style={styles.bannerImage} />
-                                </div>
+                            {slides.map((slide, index) => (
+                                <Carousel.Item key={index}>
+                                    <img
+                                        className="d-block w-100"
+                                        src={slide.banner}
+                                        alt={`Slide ${index + 1}`}
+                                    />
+                                </Carousel.Item>
                             ))}
-                        </div>
+                        </Carousel>
                     </div>
 
-                    {/* Next Half Image */}
-                    <div style={styles.peekRight}>
+                    {/* Right Peek Image */}
+                    <div className={styles.peekRight}>
                         <img 
                             src={slides[getNextIndex()].banner} 
-                            alt="" 
-                            style={styles.peekImage}
+                            alt="Next slide"
                         />
                     </div>
                 </div>
 
-                {/* ================= THUMBNAILS ================= */}
-                <div ref={thumbsContainerRef} style={styles.thumbContainer}>
-                    {slides.map((slide, i) => (
+                {/* Thumbnail Navigation Row */}
+                <div className={styles.thumbnailContainer}>
+                    {slides.map((slide, index) => (
                         <button
-                            key={i}
-                            onClick={() => setCurrentIndex(i)}
-                            style={{
-                                ...styles.thumb,
-                                ...(currentIndex === i
-                                    ? styles.thumbActive
-                                    : styles.thumbInactive)
-                            }}
+                            key={index}
+                            className={`${styles.thumbnail} ${activeIndex === index ? styles.active : ''}`}
+                            onClick={() => setActiveIndex(index)}
                         >
-                            <img src={slide.thumb} alt="" style={styles.thumbImage} />
+                            <img src={slide.thumb} alt={`Thumbnail ${index + 1}`} />
                         </button>
                     ))}
                 </div>
 
-                {/* ================= APPLE DOT NAV ================= */}
-                <div
-                    className="dotnav"
-                    role="tablist"
-                    style={styles.dotsContainer}
-                >
-                    {slides.map((_, i) => (
+                {/* Dot Navigation */}
+                <div className={styles.dotsContainer}>
+                    {slides.map((_, index) => (
                         <button
-                            key={i}
-                            role="tab"
-                            aria-selected={currentIndex === i}
-                            aria-label={`Go to slide ${i + 1}`}
-                            onClick={() => setCurrentIndex(i)}
-                            style={{
-                                ...styles.dot,
-                                ...(currentIndex === i
-                                    ? styles.dotActive
-                                    : styles.dotInactive)
-                            }}
+                            key={index}
+                            className={`${styles.dot} ${activeIndex === index ? styles.active : ''}`}
+                            onClick={() => setActiveIndex(index)}
+                            aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}
-
-                    {/* ================= PLAY / PAUSE ================= */}
-                    <button
-                        onClick={() => setIsPlaying(!isPlaying)}
-                        aria-label={isPlaying ? "Pause gallery" : "Play gallery"}
-                        style={styles.playPause}
-                    >
-                        {isPlaying ? "❚❚" : "▶"}
-                    </button>
                 </div>
 
             </div>
         </div>
     );
 };
-
-const styles = {
-    wrapper: {
-        width: '100%',
-        backgroundColor: '#f5f5f7',
-        padding: '40px 0'
-    },
-    container: {
-        width: '100%',
-        maxWidth: '1280px',
-        margin: '0 auto',
-        padding: '0 20px'
-    },
-    bannerSection: {
-        display: 'flex',
-        alignItems: 'center',
-        gap: '16px',
-        marginBottom: '24px',
-        width: '100%'
-    },
-    peekLeft: {
-        width: '15%',
-        height: '400px',
-        overflow: 'hidden',
-        borderRadius: '12px',
-        opacity: 0.5
-    },
-    peekRight: {
-        width: '15%',
-        height: '400px',
-        overflow: 'hidden',
-        borderRadius: '12px',
-        opacity: 0.5
-    },
-    peekImage: {
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-        objectPosition: 'center',
-        imageRendering: 'crisp-edges'
-    },
-    bannerWrapper: {
-        flex: 1,
-        height: '500px',
-        overflow: 'hidden',
-        borderRadius: '18px',
-        position: 'relative',
-        backgroundColor: '#000',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.15)'
-    },
-    bannerSlider: {
-        display: 'flex',
-        height: '100%',
-        transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
-    },
-    bannerSlide: {
-        minWidth: '100%',
-        height: '100%',
-        position: 'relative'
-    },
-    bannerImage: {
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-        display: 'block'
-    },
-    thumbContainer: {
-        display: 'flex',
-        gap: '12px',
-        overflowX: 'auto',
-        scrollBehavior: 'smooth',
-        scrollbarWidth: 'none',
-        msOverflowStyle: 'none',
-        padding: '4px 0',
-        WebkitOverflowScrolling: 'touch',
-        marginBottom: '24px'
-    },
-    thumb: {
-        flexShrink: 0,
-        width: '235px',
-        height: '132px',
-        borderRadius: '12px',
-        overflow: 'hidden',
-        cursor: 'pointer',
-        transition: 'all 0.3s ease',
-        border: 'none',
-        padding: 0,
-        background: 'none',
-        position: 'relative'
-    },
-    thumbActive: {
-        opacity: 1,
-        transform: 'scale(1)',
-        boxShadow: '0 0 0 3px #0071e3'
-    },
-    thumbInactive: {
-        opacity: 0.6,
-        transform: 'scale(0.95)',
-        boxShadow: 'none'
-    },
-    thumbImage: {
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-        display: 'block',
-        pointerEvents: 'none'
-    },
-    dotsContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '8px',
-        alignItems: 'center',
-        padding: '20px 0'
-    },
-    dot: {
-        height: '8px',
-        borderRadius: '4px',
-        cursor: 'pointer',
-        transition: 'all 0.3s ease',
-        border: 'none',
-        padding: 0,
-        background: 'none'
-    },
-    dotActive: {
-        width: '32px',
-        backgroundColor: '#0071e3'
-    },
-    dotInactive: {
-        width: '8px',
-        backgroundColor: '#d2d2d7'
-    },
-    playPause: {
-        marginLeft: '12px',
-        padding: '8px 12px',
-        backgroundColor: '#0071e3',
-        color: 'white',
-        border: 'none',
-        borderRadius: '6px',
-        cursor: 'pointer',
-        fontSize: '12px',
-        fontWeight: '500'
-    }
-};
-
-// CSS to hide scrollbar
-const styleElement = document.createElement("style");
-styleElement.textContent = `
-  div::-webkit-scrollbar {
-    display: none;
-  }
-`;
-if (!document.head.querySelector('style[data-carousel-styles]')) {
-    styleElement.setAttribute('data-carousel-styles', 'true');
-    document.head.appendChild(styleElement);
-}
 
 export default AppleCarousel;

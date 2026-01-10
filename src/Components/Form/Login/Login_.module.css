@@ -6,7 +6,7 @@
 .card {
   width: 450px;
   margin: auto;
-  height: 500px;
+  height: 520px;
   border-radius: 30px;
   background: #1c1c1e;
   box-shadow: 15px 15px 30px rgb(25, 25, 25),
@@ -46,7 +46,7 @@
 .paragragh{
     color: #2d8cff;
     font-size: 12px;
-    margin-inline-start: 15%;
+    margin-inline-start: 17%;
 }
 .pararagh_last_div{
     display: flex;
@@ -81,4 +81,18 @@
     padding: 8px;
     padding-left: 33px;
     padding-right: 33px;
+}
+
+.homeLink {
+  display: inline-block;
+  color: #0a84ff;
+  text-decoration: none;
+  font-size: 11px;
+   margin-inline-start: 15%;
+  transition: color 0.2s ease;
+}
+
+.homeLink:hover {
+  color: #0077ed;
+  text-decoration: underline;
 }

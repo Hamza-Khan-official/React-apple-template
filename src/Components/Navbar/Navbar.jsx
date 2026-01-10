@@ -41,7 +41,7 @@ const Navbar_ = () => {
                                         <span className={style.login}>Login</span>
                                     </Link>
                                 </Nav.Link>
-                                <Nav.Link href="#signup" className="auth-link">
+                                <Nav.Link className="auth-link">
                                     <Link to={'/React-apple-template/signup'}>
                                         <span className={style.login}>SignUP</span>
                                     </Link>

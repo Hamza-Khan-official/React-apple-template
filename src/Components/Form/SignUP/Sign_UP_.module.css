@@ -115,6 +115,7 @@
 
 /* Buttons */
 .continueBtn {
+  width: 28vw;
   background: #0a84ff;
   color: #ffffff;
   border: none;
