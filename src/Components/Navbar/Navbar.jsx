@@ -36,12 +36,16 @@ const Navbar_ = () => {
                                 <Nav.Link href="#entertainment">Entertainment</Nav.Link>
                                 <Nav.Link href="#accessories">Accessories</Nav.Link>
                                 <Nav.Link href="#support">Support</Nav.Link>
-                                <Nav.Link href="#login" className="auth-link">
+                                <Nav.Link className="auth-link">
                                     <Link to={'/React-apple-template/login'}>
-                                    <span className={style.login}>Login</span>
+                                        <span className={style.login}>Login</span>
                                     </Link>
                                 </Nav.Link>
-                                <Nav.Link href="#signup" className="auth-link">SignUp</Nav.Link>
+                                <Nav.Link href="#signup" className="auth-link">
+                                    <Link to={'/React-apple-template/signup'}>
+                                        <span className={style.login}>SignUP</span>
+                                    </Link>
+                                </Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

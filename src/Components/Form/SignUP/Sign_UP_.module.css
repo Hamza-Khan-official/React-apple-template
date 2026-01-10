@@ -1,0 +1,212 @@
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Form Card */
+.formCard {
+  background: #1c1c1e;
+  padding: 50px 40px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Logo Container */
+.logoContainer {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appleLogo {
+}
+
+/* Title */
+.title {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 35px 0;
+  letter-spacing: -0.5px;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Input Fields */
+.input {
+  width: 100%;
+  padding: 16px 18px;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #8a8a8a;
+}
+
+.input:focus {
+  background: #323232;
+  border-color: #0a84ff;
+  box-shadow: 0 0 0 4px rgba(10, 132, 255, 0.1);
+}
+
+/* Privacy Notice */
+.privacyNotice {
+  display: flex;
+  gap: 12px;
+  background: #252525;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.privacyIcon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  color: #0a84ff;
+}
+
+.privacyText {
+  color: #a0a0a0;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.privacyLink {
+  color: #0a84ff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.privacyLink:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.continueBtn {
+  background: #0a84ff;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.continueBtn:hover {
+  background: #0077ed;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10, 132, 255, 0.3);
+}
+
+.continueBtn:active {
+  transform: translateY(0);
+}
+
+.iphoneBtn {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.iphoneBtn:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.iphoneBtn:active {
+  transform: translateY(0);
+}
+
+/* Sign In Text */
+.signinText {
+  text-align: center;
+  color: #8a8a8a;
+  font-size: 14px;
+  margin: 20px 0 0 0;
+}
+
+.signinLink {
+  color: #0a84ff;
+  text-decoration: none;
+}
+
+.signinLink:hover {
+  text-decoration: underline;
+}
+
+/* Home Link */
+.homeLink {
+  display: inline-block;
+  color: #0a84ff;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 25px;
+  transition: color 0.2s ease;
+}
+
+.homeLink:hover {
+  color: #0077ed;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .formCard {
+    padding: 40px 25px;
+  }
+
+  .nameRow {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .logoContainer {
+    width: 140px;
+    height: 140px;
+  }
+}
